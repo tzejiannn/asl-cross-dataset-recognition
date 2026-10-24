@@ -32,7 +32,7 @@ This file explains how to obtain both datasets, and how to rebuild the dataset u
 
 ## 1. Obtaining the data
 
-### WLASL
+### WLASL (stage 01, `pipeline/01_wlasl_download/`)
 
 1. Read and accept the C-UDA licence on the WLASL project page,
    <https://dxli94.github.io/WLASL/>. Clone the code from <https://github.com/dxli94/WLASL>.
@@ -58,7 +58,7 @@ This file explains how to obtain both datasets, and how to rebuild the dataset u
    This project ended up with 1,265 of the 2,038 WLASL100 clips. Links keep breaking, so a fresh
    download may get fewer (see [Known differences](#known-differences-from-a-fresh-run)).
 
-### ASL Citizen
+### ASL Citizen (split files, needed from stage 02 on)
 
 1. Read and accept the licence on the Microsoft Download Center page for ASL Citizen,
    <https://www.microsoft.com/en-us/download/details.aspx?id=105253> (project page:
@@ -73,21 +73,63 @@ This file explains how to obtain both datasets, and how to rebuild the dataset u
    with its sign, signer and ASL-LEX code. The videos come later, in stage 04, once the vocabulary
    is known.
 
-## 2. Preprocessing and cleaning
+## 2. Building the dataset with `pipeline/`
 
-Run each script from its own folder in `pipeline/`. Stage 01 is above.
+`pipeline/` has one folder per stage, numbered in the order they run. Each stage reads what earlier
+stages wrote and keeps its own output in its folder. Stage 09 then assembles the final dataset in
+`data/`, which is what the experiments read.
 
-| Stage | Command | Result |
-|---|---|---|
-| **02 Vocabulary** | `python find_overlap.py` | 100 WLASL100 words → 67. Writes `class_list.txt` and `vocabulary.json` |
-| **03 WLASL filter** | `python filter_wlasl.py` | 1,265 → 843 WLASL clips of the 67 words, in `videos/` and `wlasl_clips.json` |
-| **04 ASL Citizen download** | `python download_asl_citizen.py` | 2,050 ASL Citizen clips of the 67 signs, in `videos/` |
-| **05 Split** | `python build_split.py` | `split_uncleaned.json`: ASL Citizen train 973 / val 258 / test 819 (ASL Citizen's own signer-independent split), WLASL 843 (test only) |
-| **06 Poses** | `python pose_extraction.py --videos_dir ../03_wlasl_filter/videos --out_dir poses_wlasl`<br>`python pose_extraction_parallel.py --videos_dir ../04_asl_citizen_download/videos --out_dir poses_asl_citizen` | One MediaPipe Holistic pose file per clip (`model_complexity=2`; 33 body + 2 × 21 hand points), with the same settings for both datasets |
-| **07 Baseline** | `python train_baseline.py` | Three baseline ST-GCN models (seeds 0–2), trained on ASL Citizen only. They're used in stage 08 to decide which WLASL clips to look at |
-| **08 WLASL cleaning** | `python first_round_eval.py`, then a check by eye | 843 → 791 WLASL clips; see below |
-| **09 Final dataset** | `python build_final_dataset.py` | Writes `data/split.json`, `data/class_list.txt`, `data/wlasl/` and `data/asl_citizen/videos/`, and checks the WLASL clips against `data/wlasl_test_clips.csv` |
-| **Final poses** | from `pipeline/06_pose_extraction/`:<br>`python pose_extraction.py --videos_dir ../../data/wlasl/videos --out_dir ../../data/poses/wlasl`<br>`python pose_extraction_parallel.py --videos_dir ../../data/asl_citizen/videos --out_dir ../../data/poses/asl_citizen` | `data/poses/`, read by `experiments/` |
+| Stage | Folder | Reads | Writes |
+|---|---|---|---|
+| 01 | `01_wlasl_download/` | WLASL's index and videos (section 1) | `metadata/WLASL_asl100.json` (100 words), `videos/` (1,265 WLASL100 clips) |
+| — | `data/asl_citizen/` | ASL Citizen's zip (section 1) | `ASL_Citizen/splits/{train,val,test}.csv` |
+| 02 | `02_vocabulary_overlap/` | 01 index, ASL Citizen splits | `class_list.txt` (the 67 classes), `vocabulary.json` |
+| 03 | `03_wlasl_filter/` | 01 index and videos, 02 class list | `videos/` (843 WLASL clips of the 67 words), `wlasl_clips.json` |
+| 04 | `04_asl_citizen_download/` | 02 class list, ASL Citizen splits | `videos/` (2,050 ASL Citizen clips of the 67 signs) |
+| 05 | `05_split/` | 02 class list, 03 clip list, ASL Citizen splits | `split_uncleaned.json` (ASL Citizen 973 / 258 / 819, WLASL 843) |
+| 06 | `06_pose_extraction/` | 03 and 04 videos | `poses_wlasl/`, `poses_asl_citizen/` (one pose file per clip) |
+| 07 | `07_baseline/` | 02 class list, 05 split, 06 ASL Citizen poses | three baseline models in `experiments/checkpoints/baseline_s{0,1,2}/` |
+| 08 | `08_wlasl_clean/` | 03 clip list, 05 split, 06 WLASL poses, 07 models | `first_round_baseline.json`, `first_round_per_sign.json`; the check by eye gives `excluded_clips.json` |
+| 09 | `09_build_dataset/` | 02 class list, 03 and 04 videos, 03 clip list, 05 split, 08 `excluded_clips.json` | `data/split.json`, `data/class_list.txt`, `data/wlasl/`, `data/asl_citizen/videos/` |
+| final poses | `06_pose_extraction/` again | `data/wlasl/videos/`, `data/asl_citizen/videos/` | `data/poses/wlasl/`, `data/poses/asl_citizen/` |
+
+Poses are extracted twice, with the same script and settings. Stage 06 covers all 843 WLASL clips,
+because stages 07 and 08 need them to decide which clips to remove. The final pass covers only the
+clips in `data/`, and these are the poses the experiments use.
+
+**Rebuilding without repeating the review:** `excluded_clips.json` is in the repository, so stages
+06–08 can be skipped. Run 02 → 03 → 04 → 05 → 09, then the final pose extraction.
+
+### Commands
+
+Run each script from its own folder. Stage 01 and the ASL Citizen split files are in section 1.
+
+```
+cd pipeline/02_vocabulary_overlap && python find_overlap.py && cd ../..
+cd pipeline/03_wlasl_filter       && python filter_wlasl.py && cd ../..
+cd pipeline/04_asl_citizen_download && python download_asl_citizen.py && cd ../..
+cd pipeline/05_split              && python build_split.py && cd ../..
+
+# stages 06-08 (optional: only needed to repeat the cleaning review)
+cd pipeline/06_pose_extraction
+python pose_extraction.py --videos_dir ../03_wlasl_filter/videos --out_dir poses_wlasl
+python pose_extraction_parallel.py --videos_dir ../04_asl_citizen_download/videos --out_dir poses_asl_citizen
+cd ../07_baseline    && python train_baseline.py
+cd ../08_wlasl_clean && python first_round_eval.py     # then check the flagged clips by eye
+cd ../..
+
+cd pipeline/09_build_dataset      && python build_final_dataset.py && cd ../..
+
+# final poses, read by experiments/
+cd pipeline/06_pose_extraction
+python pose_extraction.py --videos_dir ../../data/wlasl/videos --out_dir ../../data/poses/wlasl
+python pose_extraction_parallel.py --videos_dir ../../data/asl_citizen/videos --out_dir ../../data/poses/asl_citizen
+cd ../..
+```
+
+Stage 09 ends by comparing the WLASL clips with `wlasl_test_clips.csv` and names any that differ.
+Pose files hold the MediaPipe Holistic body (33 points) and both hands (21 points each), extracted
+with `model_complexity=2`.
 
 ### Stage 02: choosing the vocabulary
 
@@ -130,9 +172,6 @@ watching it.
 Eight of the northtexas clips (70015, 70173, 70234, 70271, 70295, 70325, 70326, 70355) belong to
 words outside the 67, so they're never in the dataset. Stage 09 reads this list from
 `pipeline/08_wlasl_clean/excluded_clips.json`, which holds the same clip ids and reasons.
-
-To rebuild the dataset without repeating the review, stages 07 and 08 can be skipped: stage 09
-needs only the exclusion list.
 
 ### Known differences from a fresh run
 

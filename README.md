@@ -10,22 +10,21 @@ own signer-independent split) and 791 cleaned WLASL clips (test only).
 ## Data
 
 This repository contains no data: the WLASL and ASL Citizen licences don't allow it to be
-redistributed. **[`data/README.md`](data/README.md)** explains how to obtain both datasets, gives
-the preprocessing and cleaning steps that rebuild the dataset, and lists the final 67-sign
-vocabulary.
+redistributed. Instead, the dataset is rebuilt from the original sources with the scripts in
+`pipeline/`, one folder per stage, run in order. **[`data/README.md`](data/README.md)** has the
+download steps, what each stage reads and writes, the commands, and the final 67-sign vocabulary.
 
-In short:
-
-1. WLASL100 (the first 100 words of WLASL) is downloaded with WLASL's own scripts, and the missing
-   clips are filled in from the Hugging Face copy.
-2. A word is kept only if ASL Citizen has exactly one sign for it: 100 words → 67.
-3. Only the ASL Citizen clips of those 67 signs are downloaded, and ASL Citizen's own
-   signer-independent train / val / test split is kept.
-4. MediaPipe Holistic poses are extracted from both datasets with the same settings.
-5. The WLASL test clips are cleaned (843 → 791). Low accuracy decides which clips to look at;
-   whether a clip is removed is decided by watching it. The whole northtexas source is removed
-   (clips cut at the wrong points), and so are 21 clips that show a different sign from ASL
-   Citizen's.
+| Stage | What it does |
+|---|---|
+| `01_wlasl_download/` | Downloads WLASL100 (the first 100 words of WLASL) with WLASL's own scripts, filling in dead links from the Hugging Face copy: 1,265 clips |
+| `02_vocabulary_overlap/` | Keeps a word only if ASL Citizen has exactly one sign for it: 100 words → 67 |
+| `03_wlasl_filter/` | Keeps the WLASL clips of those 67 words: 843 clips |
+| `04_asl_citizen_download/` | Downloads only the ASL Citizen clips of the 67 signs: 2,050 clips |
+| `05_split/` | ASL Citizen's own signer-independent split (train 973 / val 258 / test 819); WLASL is test only |
+| `06_pose_extraction/` | MediaPipe Holistic poses for both datasets, with the same settings |
+| `07_baseline/` | Three baseline models trained on ASL Citizen, used only to decide which WLASL clips to check |
+| `08_wlasl_clean/` | WLASL cleaning, 843 → 791: the northtexas source is removed (clips cut at the wrong points), and so are 21 clips that show a different sign from ASL Citizen's. Low accuracy decides which clips to look at; whether a clip is removed is decided by watching it |
+| `09_build_dataset/` | Assembles the final dataset in `data/`; the stage 06 scripts then extract its poses for the experiments |
 
 ## Repository layout
 
