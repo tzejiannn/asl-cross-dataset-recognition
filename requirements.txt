@@ -1,0 +1,19 @@
+# Python 3.11. Versions are the ones this project was run with.
+# Install with: pip install -r requirements.txt
+# For a GPU build of torch, install it first from https://pytorch.org (this project used CUDA 13.0).
+
+# model and experiments
+torch==2.14.0
+numpy==1.26.4                      # mediapipe 0.10.21 needs numpy < 2
+tqdm==4.70.0
+
+# pose extraction (mediapipe 0.10.21 still has the legacy Holistic API the scripts use)
+mediapipe==0.10.21
+opencv-contrib-python==4.11.0.86   # the OpenCV build mediapipe depends on; provides cv2
+
+# figures
+matplotlib==3.11.1
+
+# data download: ASL Citizen clips from the zip, and WLASL's YouTube clips
+remotezip==0.12.6
+yt-dlp==2026.8.19
