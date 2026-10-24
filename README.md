@@ -27,23 +27,31 @@ redistributed. To get the data:
 
 ```
 data/          the rebuilt dataset goes here; README.md and the list of WLASL test clips
-pipeline/      the scripts that build the dataset, stages 01–09, with README.md giving the steps
-model/         the ST-GCN model code (used by the baseline and by every experiment)
+pipeline/      the scripts that build the dataset, stages 01–09
+model/         the ST-GCN model and the pose preprocessing
 experiments/   ablation conditions, training and evaluation; runs write their checkpoints, logs and eval results here
-results/       scripts that compile the ablation tables and draw the normalisation figures
-paths.py       where everything lives; experiments/ and results/ scripts import it
+results/       scripts that compile the results tables and draw the normalisation figures
+paths.py       where everything lives; the scripts import it
 requirements.txt  the Python packages, with the versions used
 ```
+
+Each folder has a README explaining how to use it.
 
 ## Experiments
 
 15 conditions × 3 seeds = 45 runs. Every run trains on ASL Citizen and is tested on both the ASL
-Citizen test split and WLASL. The conditions are defined in `experiments/ablation_configs.py`.
+Citizen test set and WLASL.
 
 ```
-bash experiments/run_experiments.sh "baseline hands_only ..." "0 1 2"   # train + evaluate; skips finished runs
+bash experiments/run_experiments.sh "baseline hands_only ..." "0 1 2"   # train + evaluate each run
 python results/compile_results.py                                       # → results/ablation_results.md
 ```
+
+- **[`experiments/README.md`](experiments/README.md)**: the conditions, running the study, and
+  training or evaluating a single run.
+- **[`model/README.md`](model/README.md)**: the ST-GCN, the pose format, the point sets and the
+  preprocessing transforms.
+- **[`results/README.md`](results/README.md)**: the results tables and the normalisation figures.
 
 Headline results (top-1, mean ± SD over 3 seeds):
 
@@ -51,8 +59,6 @@ Headline results (top-1, mean ± SD over 3 seeds):
 |---|---:|---:|
 | baseline | 74.4 ± 2.8 | 44.1 ± 1.3 |
 | `hands_only_temporal64` (best) | 81.5 ± 0.7 | 58.2 ± 2.0 |
-
-`compile_results.py` writes the table for every condition to `results/ablation_results.md`.
 
 ## Licences
 

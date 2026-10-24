@@ -24,9 +24,10 @@ experiments/checkpoints/
 experiments/logs/
 experiments/eval_results/
 
-# results/ holds only the scripts; their tables and figures are generated
+# results/ holds only the scripts and their README; the tables and figures are generated
 results/*
 !results/*.py
+!results/README.md
 
 __pycache__/
 .claude/
