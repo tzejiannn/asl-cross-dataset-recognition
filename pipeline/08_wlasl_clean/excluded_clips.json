@@ -1,0 +1,28 @@
+{
+  "accident": {
+    "reason": "by-sign check: 'accident' was flagged by the first-round evaluation (>1 SD below mean accuracy); viewed against ASL Citizen reference clips, these clips show the 'by mistake' sign (hand at the chin), not ASL Citizen's ACCIDENT (collision).",
+    "count": 6,
+    "clips": ["00623", "00625", "00627", "00628", "00633", "00639"]
+  },
+  "before": {
+    "reason": "by-sign check: 'before' was flagged by the first-round evaluation (>1 SD below mean accuracy); viewed against ASL Citizen reference clips, these clips show the PAST sign (hand thrown back over the shoulder), not ASL Citizen's BEFORE.",
+    "count": 11,
+    "clips": ["05724", "05728", "05731", "05732", "05734", "05741", "05742", "05743", "05746", "05749", "68007"]
+  },
+  "last": {
+    "reason": "by-sign check: 'last' was flagged by the first-round evaluation (>1 SD below mean accuracy); viewed against ASL Citizen reference clips, these clips show the PAST sign (hand thrown back over the shoulder), not ASL Citizen's LAST ('final').",
+    "count": 4,
+    "clips": ["32253", "32255", "32257", "32261"]
+  },
+  "northtexas": {
+    "reason": "northtexas: clips cut from compilation videos; WLASL's frame ranges land on title cards / idle frames / neighbouring signs. Flagged by the first-round evaluation (3.3% top-1 vs >=36.7% for every other source; 31% of frames with no person detected), confirmed by eye.",
+    "count": 39,
+    "clips": [
+      "70015", "70016", "70173", "70176", "70207", "70211", "70212", "70230",
+      "70234", "70237", "70242", "70244", "70245", "70246", "70247", "70249",
+      "70263", "70266", "70270", "70271", "70295", "70296", "70299", "70306",
+      "70308", "70309", "70310", "70323", "70325", "70326", "70332", "70335",
+      "70345", "70348", "70355", "70356", "70357", "70359", "70361"
+    ]
+  }
+}

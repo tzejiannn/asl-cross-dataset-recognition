@@ -1,0 +1,311 @@
+{
+ "kept": {
+  "accident": {
+   "sign": "ACCIDENT",
+   "asl_lex": "B_02_059"
+  },
+  "africa": {
+   "sign": "AFRICA",
+   "asl_lex": "A_02_082"
+  },
+  "all": {
+   "sign": "ALL",
+   "asl_lex": "C_03_088"
+  },
+  "apple": {
+   "sign": "APPLE",
+   "asl_lex": "A_03_054"
+  },
+  "before": {
+   "sign": "BEFORE",
+   "asl_lex": "G_02_053"
+  },
+  "bird": {
+   "sign": "BIRD",
+   "asl_lex": "A_01_041"
+  },
+  "birthday": {
+   "sign": "BIRTHDAY",
+   "asl_lex": "D_01_054"
+  },
+  "black": {
+   "sign": "BLACK",
+   "asl_lex": "B_02_006"
+  },
+  "blue": {
+   "sign": "BLUE",
+   "asl_lex": "C_02_062"
+  },
+  "book": {
+   "sign": "BOOK",
+   "asl_lex": "A_01_027"
+  },
+  "brown": {
+   "sign": "BROWN",
+   "asl_lex": "D_03_045"
+  },
+  "but": {
+   "sign": "BUT",
+   "asl_lex": "D_03_030"
+  },
+  "chair": {
+   "sign": "CHAIR",
+   "asl_lex": "A_01_017"
+  },
+  "change": {
+   "sign": "CHANGE",
+   "asl_lex": "E_01_031"
+  },
+  "clothes": {
+   "sign": "CLOTHES",
+   "asl_lex": "E_03_096"
+  },
+  "color": {
+   "sign": "COLOR",
+   "asl_lex": "C_02_039"
+  },
+  "computer": {
+   "sign": "COMPUTER",
+   "asl_lex": "A_01_054"
+  },
+  "cook": {
+   "sign": "COOK",
+   "asl_lex": "D_03_078"
+  },
+  "cousin": {
+   "sign": "COUSIN",
+   "asl_lex": "C_01_023"
+  },
+  "cow": {
+   "sign": "COW",
+   "asl_lex": "A_01_033"
+  },
+  "dance": {
+   "sign": "DANCE",
+   "asl_lex": "B_02_063"
+  },
+  "enjoy": {
+   "sign": "ENJOY",
+   "asl_lex": "D_03_033"
+  },
+  "family": {
+   "sign": "FAMILY",
+   "asl_lex": "C_01_025"
+  },
+  "finish": {
+   "sign": "FINISH",
+   "asl_lex": "B_03_025"
+  },
+  "fish": {
+   "sign": "FISH",
+   "asl_lex": "A_03_040"
+  },
+  "full": {
+   "sign": "FULL",
+   "asl_lex": "D_02_048"
+  },
+  "give": {
+   "sign": "GIVE",
+   "asl_lex": "F_01_023"
+  },
+  "go": {
+   "sign": "GO",
+   "asl_lex": "C_03_056"
+  },
+  "graduate": {
+   "sign": "GRADUATE",
+   "asl_lex": "B_03_081"
+  },
+  "hearing": {
+   "sign": "HEARING",
+   "asl_lex": "C_02_023"
+  },
+  "help": {
+   "sign": "HELP",
+   "asl_lex": "D_01_042"
+  },
+  "hot": {
+   "sign": "HOT",
+   "asl_lex": "F_02_093"
+  },
+  "language": {
+   "sign": "LANGUAGE",
+   "asl_lex": "A_01_067"
+  },
+  "last": {
+   "sign": "LAST",
+   "asl_lex": "B_01_038"
+  },
+  "later": {
+   "sign": "LATER",
+   "asl_lex": "D_01_077"
+  },
+  "like": {
+   "sign": "LIKE",
+   "asl_lex": "F_03_063"
+  },
+  "man": {
+   "sign": "MAN",
+   "asl_lex": "C_01_040"
+  },
+  "many": {
+   "sign": "MANY",
+   "asl_lex": "D_03_065"
+  },
+  "medicine": {
+   "sign": "MEDICINE",
+   "asl_lex": "C_03_040"
+  },
+  "meet": {
+   "sign": "MEET",
+   "asl_lex": "D_02_018"
+  },
+  "mother": {
+   "sign": "MOTHER",
+   "asl_lex": "B_02_008"
+  },
+  "need": {
+   "sign": "NEED",
+   "asl_lex": "C_02_034"
+  },
+  "no": {
+   "sign": "NO",
+   "asl_lex": "C_03_041"
+  },
+  "now": {
+   "sign": "NOW",
+   "asl_lex": "C_03_062"
+  },
+  "orange": {
+   "sign": "ORANGE",
+   "asl_lex": "A_02_020"
+  },
+  "paint": {
+   "sign": "PAINT",
+   "asl_lex": "D_01_048"
+  },
+  "paper": {
+   "sign": "PAPER",
+   "asl_lex": "A_01_026"
+  },
+  "pink": {
+   "sign": "PINK",
+   "asl_lex": "C_01_074"
+  },
+  "play": {
+   "sign": "PLAY",
+   "asl_lex": "C_01_066"
+  },
+  "pull": {
+   "sign": "PULL",
+   "asl_lex": "D_02_062"
+  },
+  "purple": {
+   "sign": "PURPLE",
+   "asl_lex": "B_02_067"
+  },
+  "school": {
+   "sign": "SCHOOL",
+   "asl_lex": "C_03_089"
+  },
+  "secretary": {
+   "sign": "SECRETARY",
+   "asl_lex": "A_03_059"
+  },
+  "son": {
+   "sign": "SON",
+   "asl_lex": "B_02_086"
+  },
+  "study": {
+   "sign": "STUDY",
+   "asl_lex": "G_01_090"
+  },
+  "table": {
+   "sign": "TABLE",
+   "asl_lex": "A_03_025"
+  },
+  "tell": {
+   "sign": "TELL",
+   "asl_lex": "C_02_013"
+  },
+  "thanksgiving": {
+   "sign": "THANKSGIVING",
+   "asl_lex": "D_01_047"
+  },
+  "thin": {
+   "sign": "THIN",
+   "asl_lex": "C_02_002"
+  },
+  "thursday": {
+   "sign": "THURSDAY",
+   "asl_lex": "B_02_045"
+  },
+  "time": {
+   "sign": "TIME",
+   "asl_lex": "B_02_080"
+  },
+  "white": {
+   "sign": "WHITE",
+   "asl_lex": "E_03_046"
+  },
+  "who": {
+   "sign": "WHO",
+   "asl_lex": "C_01_041"
+  },
+  "work": {
+   "sign": "WORK",
+   "asl_lex": "B_03_059"
+  },
+  "wrong": {
+   "sign": "WRONG",
+   "asl_lex": "B_01_055"
+  },
+  "year": {
+   "sign": "YEAR",
+   "asl_lex": "B_02_015"
+  },
+  "yes": {
+   "sign": "YES",
+   "asl_lex": "G_03_074"
+  }
+ },
+ "dropped": {
+  "not in ASL Citizen": [
+   "forget",
+   "short"
+  ],
+  "several ASL Citizen signs": [
+   "basketball",
+   "bed",
+   "bowling",
+   "can",
+   "candy",
+   "cheat",
+   "city",
+   "cool",
+   "corn",
+   "dark",
+   "deaf",
+   "decide",
+   "doctor",
+   "dog",
+   "drink",
+   "eat",
+   "fine",
+   "hat",
+   "how",
+   "jacket",
+   "kiss",
+   "letter",
+   "pizza",
+   "right",
+   "same",
+   "shirt",
+   "tall",
+   "walk",
+   "want",
+   "what",
+   "woman"
+  ]
+ }
+}

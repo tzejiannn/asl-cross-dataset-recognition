@@ -1,0 +1,32 @@
+# Licensed data is not redistributed (WLASL: C-UDA; ASL Citizen: Microsoft Research License Terms).
+# See data/README.md for how to obtain and rebuild it.
+
+# the final dataset: videos, poses, split files, licences
+data/*
+!data/README.md
+!data/wlasl_test_clips.csv
+
+# pipeline working copies: videos, poses, downloaded and derived dataset files
+pipeline/01_wlasl_download/raw_videos/
+pipeline/01_wlasl_download/raw_videos_mp4/
+pipeline/01_wlasl_download/hf_raw_videos/
+pipeline/01_wlasl_download/videos/
+pipeline/01_wlasl_download/metadata/
+pipeline/01_wlasl_download/*.log
+pipeline/03_wlasl_filter/videos/
+pipeline/03_wlasl_filter/wlasl_clips.json
+pipeline/04_asl_citizen_download/videos/
+pipeline/05_split/split_uncleaned.json
+pipeline/06_pose_extraction/poses_*/
+
+# run outputs: checkpoints (trained on ASL Citizen), training logs and eval results
+experiments/checkpoints/
+experiments/logs/
+experiments/eval_results/
+
+# results/ holds only the scripts; their tables and figures are generated
+results/*
+!results/*.py
+
+__pycache__/
+.claude/

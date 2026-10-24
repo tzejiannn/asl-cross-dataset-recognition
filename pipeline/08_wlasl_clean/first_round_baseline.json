@@ -1,0 +1,2296 @@
+{
+ "condition": "baseline",
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "clips": 843,
+ "top1_per_run": [
+  0.4033214709371293,
+  0.41755634638196915,
+  0.41874258600237246
+ ],
+ "per_source": {
+  "aslbrick": {
+   "clips": 31,
+   "top1": 0.46236559139784944,
+   "no_person_frames": 0.0
+  },
+  "aslsignbank": {
+   "clips": 62,
+   "top1": 0.5591397849462365,
+   "no_person_frames": 0.0
+  },
+  "valencia-asl": {
+   "clips": 17,
+   "top1": 0.49019607843137253,
+   "no_person_frames": 0.0
+  },
+  "northtexas": {
+   "clips": 31,
+   "top1": 0.03225806451612903,
+   "no_person_frames": 0.3063682804754976
+  },
+  "signschool": {
+   "clips": 124,
+   "top1": 0.3010752688172043,
+   "no_person_frames": 0.0
+  },
+  "startasl": {
+   "clips": 64,
+   "top1": 0.375,
+   "no_person_frames": 0.0
+  },
+  "asldeafined": {
+   "clips": 89,
+   "top1": 0.550561797752809,
+   "no_person_frames": 0.011812403773344048
+  },
+  "aslsearch": {
+   "clips": 75,
+   "top1": 0.47555555555555556,
+   "no_person_frames": 0.012003797066634599
+  },
+  "signingsavvy": {
+   "clips": 147,
+   "top1": 0.3582766439909297,
+   "no_person_frames": 0.0
+  },
+  "aslu": {
+   "clips": 83,
+   "top1": 0.34538152610441764,
+   "no_person_frames": 0.0
+  },
+  "asl5200": {
+   "clips": 45,
+   "top1": 0.4888888888888889,
+   "no_person_frames": 0.0
+  },
+  "spreadthesign": {
+   "clips": 61,
+   "top1": 0.5191256830601093,
+   "no_person_frames": 0.0
+  },
+  "scott": {
+   "clips": 7,
+   "top1": 0.9047619047619048,
+   "no_person_frames": 0.0
+  },
+  "elementalasl": {
+   "clips": 7,
+   "top1": 0.38095238095238093,
+   "no_person_frames": 0.0
+  }
+ },
+ "always_wrong": [
+  {
+   "video_id": "00623",
+   "source": "spreadthesign",
+   "label": "accident",
+   "predicted": "thin"
+  },
+  {
+   "video_id": "00625",
+   "source": "signschool",
+   "label": "accident",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "00626",
+   "source": "signschool",
+   "label": "accident",
+   "predicted": "meet"
+  },
+  {
+   "video_id": "00627",
+   "source": "signschool",
+   "label": "accident",
+   "predicted": "wrong"
+  },
+  {
+   "video_id": "00628",
+   "source": "signschool",
+   "label": "accident",
+   "predicted": "wrong"
+  },
+  {
+   "video_id": "00631",
+   "source": "signingsavvy",
+   "label": "accident",
+   "predicted": "clothes"
+  },
+  {
+   "video_id": "00632",
+   "source": "signingsavvy",
+   "label": "accident",
+   "predicted": "all"
+  },
+  {
+   "video_id": "00633",
+   "source": "signingsavvy",
+   "label": "accident",
+   "predicted": "wrong"
+  },
+  {
+   "video_id": "00639",
+   "source": "aslsearch",
+   "label": "accident",
+   "predicted": "meet"
+  },
+  {
+   "video_id": "01385",
+   "source": "signschool",
+   "label": "africa",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "01386",
+   "source": "signschool",
+   "label": "africa",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "01388",
+   "source": "asldeafined",
+   "label": "africa",
+   "predicted": "mother"
+  },
+  {
+   "video_id": "01391",
+   "source": "signingsavvy",
+   "label": "africa",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "01912",
+   "source": "asl5200",
+   "label": "all",
+   "predicted": "medicine"
+  },
+  {
+   "video_id": "01987",
+   "source": "startasl",
+   "label": "all",
+   "predicted": "paper"
+  },
+  {
+   "video_id": "01988",
+   "source": "asldeafined",
+   "label": "all",
+   "predicted": "school"
+  },
+  {
+   "video_id": "01991",
+   "source": "signingsavvy",
+   "label": "all",
+   "predicted": "no"
+  },
+  {
+   "video_id": "01995",
+   "source": "aslu",
+   "label": "all",
+   "predicted": "paint"
+  },
+  {
+   "video_id": "01997",
+   "source": "aslu",
+   "label": "all",
+   "predicted": "yes"
+  },
+  {
+   "video_id": "02000",
+   "source": "aslu",
+   "label": "all",
+   "predicted": "thursday"
+  },
+  {
+   "video_id": "03002",
+   "source": "startasl",
+   "label": "apple",
+   "predicted": "yes"
+  },
+  {
+   "video_id": "05724",
+   "source": "asl5200",
+   "label": "before",
+   "predicted": "cow"
+  },
+  {
+   "video_id": "05727",
+   "source": "startasl",
+   "label": "before",
+   "predicted": "computer"
+  },
+  {
+   "video_id": "05728",
+   "source": "signschool",
+   "label": "before",
+   "predicted": "apple"
+  },
+  {
+   "video_id": "05731",
+   "source": "signschool",
+   "label": "before",
+   "predicted": "thursday"
+  },
+  {
+   "video_id": "05732",
+   "source": "asldeafined",
+   "label": "before",
+   "predicted": "fish"
+  },
+  {
+   "video_id": "05734",
+   "source": "asldeafined",
+   "label": "before",
+   "predicted": "fish"
+  },
+  {
+   "video_id": "05740",
+   "source": "signingsavvy",
+   "label": "before",
+   "predicted": "book"
+  },
+  {
+   "video_id": "05741",
+   "source": "signingsavvy",
+   "label": "before",
+   "predicted": "cousin"
+  },
+  {
+   "video_id": "05742",
+   "source": "signingsavvy",
+   "label": "before",
+   "predicted": "blue"
+  },
+  {
+   "video_id": "05743",
+   "source": "signingsavvy",
+   "label": "before",
+   "predicted": "cousin"
+  },
+  {
+   "video_id": "05746",
+   "source": "aslu",
+   "label": "before",
+   "predicted": "cow"
+  },
+  {
+   "video_id": "05747",
+   "source": "aslu",
+   "label": "before",
+   "predicted": "finish"
+  },
+  {
+   "video_id": "05749",
+   "source": "aslsearch",
+   "label": "before",
+   "predicted": "cow"
+  },
+  {
+   "video_id": "05750",
+   "source": "aslsearch",
+   "label": "before",
+   "predicted": "medicine"
+  },
+  {
+   "video_id": "06359",
+   "source": "startasl",
+   "label": "birthday",
+   "predicted": "africa"
+  },
+  {
+   "video_id": "06363",
+   "source": "signingsavvy",
+   "label": "birthday",
+   "predicted": "son"
+  },
+  {
+   "video_id": "06471",
+   "source": "spreadthesign",
+   "label": "black",
+   "predicted": "give"
+  },
+  {
+   "video_id": "06473",
+   "source": "signschool",
+   "label": "black",
+   "predicted": "cow"
+  },
+  {
+   "video_id": "06474",
+   "source": "asldeafined",
+   "label": "black",
+   "predicted": "like"
+  },
+  {
+   "video_id": "06478",
+   "source": "signingsavvy",
+   "label": "black",
+   "predicted": "son"
+  },
+  {
+   "video_id": "06832",
+   "source": "spreadthesign",
+   "label": "blue",
+   "predicted": "fish"
+  },
+  {
+   "video_id": "06833",
+   "source": "startasl",
+   "label": "blue",
+   "predicted": "mother"
+  },
+  {
+   "video_id": "06835",
+   "source": "asldeafined",
+   "label": "blue",
+   "predicted": "mother"
+  },
+  {
+   "video_id": "06839",
+   "source": "signingsavvy",
+   "label": "blue",
+   "predicted": "give"
+  },
+  {
+   "video_id": "06840",
+   "source": "aslu",
+   "label": "blue",
+   "predicted": "give"
+  },
+  {
+   "video_id": "06842",
+   "source": "aslu",
+   "label": "blue",
+   "predicted": "fish"
+  },
+  {
+   "video_id": "07070",
+   "source": "asldeafined",
+   "label": "book",
+   "predicted": "school"
+  },
+  {
+   "video_id": "07074",
+   "source": "signingsavvy",
+   "label": "book",
+   "predicted": "medicine"
+  },
+  {
+   "video_id": "07075",
+   "source": "aslu",
+   "label": "book",
+   "predicted": "enjoy"
+  },
+  {
+   "video_id": "07076",
+   "source": "aslu",
+   "label": "book",
+   "predicted": "enjoy"
+  },
+  {
+   "video_id": "07099",
+   "source": "aslsearch",
+   "label": "book",
+   "predicted": "medicine"
+  },
+  {
+   "video_id": "07957",
+   "source": "asl5200",
+   "label": "brown",
+   "predicted": "blue"
+  },
+  {
+   "video_id": "08429",
+   "source": "signingsavvy",
+   "label": "but",
+   "predicted": "no"
+  },
+  {
+   "video_id": "09849",
+   "source": "startasl",
+   "label": "chair",
+   "predicted": "paint"
+  },
+  {
+   "video_id": "09854",
+   "source": "signingsavvy",
+   "label": "chair",
+   "predicted": "need"
+  },
+  {
+   "video_id": "09855",
+   "source": "aslu",
+   "label": "chair",
+   "predicted": "time"
+  },
+  {
+   "video_id": "09949",
+   "source": "elementalasl",
+   "label": "change",
+   "predicted": "help"
+  },
+  {
+   "video_id": "09953",
+   "source": "startasl",
+   "label": "change",
+   "predicted": "year"
+  },
+  {
+   "video_id": "09955",
+   "source": "signschool",
+   "label": "change",
+   "predicted": "go"
+  },
+  {
+   "video_id": "09963",
+   "source": "signingsavvy",
+   "label": "change",
+   "predicted": "time"
+  },
+  {
+   "video_id": "09967",
+   "source": "signingsavvy",
+   "label": "change",
+   "predicted": "secretary"
+  },
+  {
+   "video_id": "09970",
+   "source": "aslsearch",
+   "label": "change",
+   "predicted": "pull"
+  },
+  {
+   "video_id": "11314",
+   "source": "aslu",
+   "label": "clothes",
+   "predicted": "language"
+  },
+  {
+   "video_id": "11767",
+   "source": "startasl",
+   "label": "color",
+   "predicted": "brown"
+  },
+  {
+   "video_id": "11768",
+   "source": "startasl",
+   "label": "color",
+   "predicted": "mother"
+  },
+  {
+   "video_id": "11769",
+   "source": "signschool",
+   "label": "color",
+   "predicted": "mother"
+  },
+  {
+   "video_id": "11780",
+   "source": "aslsearch",
+   "label": "color",
+   "predicted": "mother"
+  },
+  {
+   "video_id": "12306",
+   "source": "asl5200",
+   "label": "computer",
+   "predicted": "table"
+  },
+  {
+   "video_id": "12312",
+   "source": "startasl",
+   "label": "computer",
+   "predicted": "paint"
+  },
+  {
+   "video_id": "12313",
+   "source": "startasl",
+   "label": "computer",
+   "predicted": "paint"
+  },
+  {
+   "video_id": "12314",
+   "source": "signschool",
+   "label": "computer",
+   "predicted": "paint"
+  },
+  {
+   "video_id": "12316",
+   "source": "signschool",
+   "label": "computer",
+   "predicted": "cow"
+  },
+  {
+   "video_id": "12317",
+   "source": "signschool",
+   "label": "computer",
+   "predicted": "cousin"
+  },
+  {
+   "video_id": "12318",
+   "source": "signschool",
+   "label": "computer",
+   "predicted": "full"
+  },
+  {
+   "video_id": "12319",
+   "source": "signschool",
+   "label": "computer",
+   "predicted": "cousin"
+  },
+  {
+   "video_id": "12326",
+   "source": "signingsavvy",
+   "label": "computer",
+   "predicted": "all"
+  },
+  {
+   "video_id": "12327",
+   "source": "signingsavvy",
+   "label": "computer",
+   "predicted": "cousin"
+  },
+  {
+   "video_id": "12330",
+   "source": "aslu",
+   "label": "computer",
+   "predicted": "go"
+  },
+  {
+   "video_id": "12331",
+   "source": "aslu",
+   "label": "computer",
+   "predicted": "paint"
+  },
+  {
+   "video_id": "12333",
+   "source": "aslu",
+   "label": "computer",
+   "predicted": "africa"
+  },
+  {
+   "video_id": "12335",
+   "source": "aslu",
+   "label": "computer",
+   "predicted": "cousin"
+  },
+  {
+   "video_id": "13155",
+   "source": "spreadthesign",
+   "label": "cook",
+   "predicted": "enjoy"
+  },
+  {
+   "video_id": "13157",
+   "source": "signschool",
+   "label": "cook",
+   "predicted": "many"
+  },
+  {
+   "video_id": "13158",
+   "source": "asldeafined",
+   "label": "cook",
+   "predicted": "enjoy"
+  },
+  {
+   "video_id": "13160",
+   "source": "signingsavvy",
+   "label": "cook",
+   "predicted": "give"
+  },
+  {
+   "video_id": "13630",
+   "source": "spreadthesign",
+   "label": "cousin",
+   "predicted": "give"
+  },
+  {
+   "video_id": "13631",
+   "source": "startasl",
+   "label": "cousin",
+   "predicted": "mother"
+  },
+  {
+   "video_id": "13695",
+   "source": "spreadthesign",
+   "label": "cow",
+   "predicted": "black"
+  },
+  {
+   "video_id": "19258",
+   "source": "startasl",
+   "label": "enjoy",
+   "predicted": "year"
+  },
+  {
+   "video_id": "19259",
+   "source": "signschool",
+   "label": "enjoy",
+   "predicted": "all"
+  },
+  {
+   "video_id": "19260",
+   "source": "signschool",
+   "label": "enjoy",
+   "predicted": "cook"
+  },
+  {
+   "video_id": "20976",
+   "source": "asl5200",
+   "label": "family",
+   "predicted": "book"
+  },
+  {
+   "video_id": "20981",
+   "source": "signschool",
+   "label": "family",
+   "predicted": "paint"
+  },
+  {
+   "video_id": "20990",
+   "source": "aslu",
+   "label": "family",
+   "predicted": "computer"
+  },
+  {
+   "video_id": "21933",
+   "source": "asl5200",
+   "label": "finish",
+   "predicted": "computer"
+  },
+  {
+   "video_id": "21943",
+   "source": "signschool",
+   "label": "finish",
+   "predicted": "cow"
+  },
+  {
+   "video_id": "21944",
+   "source": "signschool",
+   "label": "finish",
+   "predicted": "like"
+  },
+  {
+   "video_id": "21949",
+   "source": "signingsavvy",
+   "label": "finish",
+   "predicted": "birthday"
+  },
+  {
+   "video_id": "21950",
+   "source": "signingsavvy",
+   "label": "finish",
+   "predicted": "book"
+  },
+  {
+   "video_id": "21951",
+   "source": "signingsavvy",
+   "label": "finish",
+   "predicted": "like"
+  },
+  {
+   "video_id": "21954",
+   "source": "aslu",
+   "label": "finish",
+   "predicted": "hot"
+  },
+  {
+   "video_id": "21955",
+   "source": "aslu",
+   "label": "finish",
+   "predicted": "hot"
+  },
+  {
+   "video_id": "22109",
+   "source": "asl5200",
+   "label": "fish",
+   "predicted": "white"
+  },
+  {
+   "video_id": "22114",
+   "source": "spreadthesign",
+   "label": "fish",
+   "predicted": "thursday"
+  },
+  {
+   "video_id": "22115",
+   "source": "startasl",
+   "label": "fish",
+   "predicted": "secretary"
+  },
+  {
+   "video_id": "22120",
+   "source": "signingsavvy",
+   "label": "fish",
+   "predicted": "give"
+  },
+  {
+   "video_id": "22121",
+   "source": "signingsavvy",
+   "label": "fish",
+   "predicted": "like"
+  },
+  {
+   "video_id": "22125",
+   "source": "aslu",
+   "label": "fish",
+   "predicted": "enjoy"
+  },
+  {
+   "video_id": "22127",
+   "source": "aslu",
+   "label": "fish",
+   "predicted": "give"
+  },
+  {
+   "video_id": "22128",
+   "source": "aslu",
+   "label": "fish",
+   "predicted": "like"
+  },
+  {
+   "video_id": "23769",
+   "source": "signschool",
+   "label": "full",
+   "predicted": "cousin"
+  },
+  {
+   "video_id": "23771",
+   "source": "asldeafined",
+   "label": "full",
+   "predicted": "purple"
+  },
+  {
+   "video_id": "23774",
+   "source": "signingsavvy",
+   "label": "full",
+   "predicted": "hearing"
+  },
+  {
+   "video_id": "23775",
+   "source": "signingsavvy",
+   "label": "full",
+   "predicted": "hearing"
+  },
+  {
+   "video_id": "23776",
+   "source": "signingsavvy",
+   "label": "full",
+   "predicted": "table"
+  },
+  {
+   "video_id": "24636",
+   "source": "spreadthesign",
+   "label": "give",
+   "predicted": "purple"
+  },
+  {
+   "video_id": "24640",
+   "source": "signschool",
+   "label": "give",
+   "predicted": "cook"
+  },
+  {
+   "video_id": "24641",
+   "source": "asldeafined",
+   "label": "give",
+   "predicted": "many"
+  },
+  {
+   "video_id": "24648",
+   "source": "signingsavvy",
+   "label": "give",
+   "predicted": "clothes"
+  },
+  {
+   "video_id": "24651",
+   "source": "signingsavvy",
+   "label": "give",
+   "predicted": "before"
+  },
+  {
+   "video_id": "24660",
+   "source": "aslsearch",
+   "label": "give",
+   "predicted": "cook"
+  },
+  {
+   "video_id": "24952",
+   "source": "signingsavvy",
+   "label": "go",
+   "predicted": "cousin"
+  },
+  {
+   "video_id": "24954",
+   "source": "signingsavvy",
+   "label": "go",
+   "predicted": "secretary"
+  },
+  {
+   "video_id": "24955",
+   "source": "signingsavvy",
+   "label": "go",
+   "predicted": "secretary"
+  },
+  {
+   "video_id": "24956",
+   "source": "signingsavvy",
+   "label": "go",
+   "predicted": "secretary"
+  },
+  {
+   "video_id": "24960",
+   "source": "signingsavvy",
+   "label": "go",
+   "predicted": "later"
+  },
+  {
+   "video_id": "24961",
+   "source": "signingsavvy",
+   "label": "go",
+   "predicted": "later"
+  },
+  {
+   "video_id": "24962",
+   "source": "signingsavvy",
+   "label": "go",
+   "predicted": "hearing"
+  },
+  {
+   "video_id": "25318",
+   "source": "asl5200",
+   "label": "graduate",
+   "predicted": "medicine"
+  },
+  {
+   "video_id": "25322",
+   "source": "startasl",
+   "label": "graduate",
+   "predicted": "paint"
+  },
+  {
+   "video_id": "25323",
+   "source": "signschool",
+   "label": "graduate",
+   "predicted": "secretary"
+  },
+  {
+   "video_id": "25324",
+   "source": "signschool",
+   "label": "graduate",
+   "predicted": "table"
+  },
+  {
+   "video_id": "25325",
+   "source": "signschool",
+   "label": "graduate",
+   "predicted": "son"
+  },
+  {
+   "video_id": "25329",
+   "source": "signingsavvy",
+   "label": "graduate",
+   "predicted": "tell"
+  },
+  {
+   "video_id": "25332",
+   "source": "aslu",
+   "label": "graduate",
+   "predicted": "secretary"
+  },
+  {
+   "video_id": "25333",
+   "source": "aslu",
+   "label": "graduate",
+   "predicted": "work"
+  },
+  {
+   "video_id": "26973",
+   "source": "signschool",
+   "label": "hearing",
+   "predicted": "apple"
+  },
+  {
+   "video_id": "26974",
+   "source": "signschool",
+   "label": "hearing",
+   "predicted": "cow"
+  },
+  {
+   "video_id": "26976",
+   "source": "asldeafined",
+   "label": "hearing",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "27194",
+   "source": "asl5200",
+   "label": "help",
+   "predicted": "enjoy"
+  },
+  {
+   "video_id": "27207",
+   "source": "signschool",
+   "label": "help",
+   "predicted": "graduate"
+  },
+  {
+   "video_id": "27213",
+   "source": "signingsavvy",
+   "label": "help",
+   "predicted": "enjoy"
+  },
+  {
+   "video_id": "27215",
+   "source": "signingsavvy",
+   "label": "help",
+   "predicted": "enjoy"
+  },
+  {
+   "video_id": "27217",
+   "source": "signingsavvy",
+   "label": "help",
+   "predicted": "like"
+  },
+  {
+   "video_id": "27221",
+   "source": "aslsearch",
+   "label": "help",
+   "predicted": "pull"
+  },
+  {
+   "video_id": "28109",
+   "source": "signschool",
+   "label": "hot",
+   "predicted": "africa"
+  },
+  {
+   "video_id": "28110",
+   "source": "signschool",
+   "label": "hot",
+   "predicted": "africa"
+  },
+  {
+   "video_id": "28111",
+   "source": "signschool",
+   "label": "hot",
+   "predicted": "cousin"
+  },
+  {
+   "video_id": "28112",
+   "source": "asldeafined",
+   "label": "hot",
+   "predicted": "thanksgiving"
+  },
+  {
+   "video_id": "28116",
+   "source": "signingsavvy",
+   "label": "hot",
+   "predicted": "cousin"
+  },
+  {
+   "video_id": "28118",
+   "source": "aslu",
+   "label": "hot",
+   "predicted": "africa"
+  },
+  {
+   "video_id": "28122",
+   "source": "aslu",
+   "label": "hot",
+   "predicted": "africa"
+  },
+  {
+   "video_id": "28125",
+   "source": "aslsearch",
+   "label": "hot",
+   "predicted": "thanksgiving"
+  },
+  {
+   "video_id": "32156",
+   "source": "signschool",
+   "label": "language",
+   "predicted": "go"
+  },
+  {
+   "video_id": "32158",
+   "source": "signschool",
+   "label": "language",
+   "predicted": "go"
+  },
+  {
+   "video_id": "32246",
+   "source": "spreadthesign",
+   "label": "last",
+   "predicted": "dance"
+  },
+  {
+   "video_id": "32249",
+   "source": "asldeafined",
+   "label": "last",
+   "predicted": "thin"
+  },
+  {
+   "video_id": "32253",
+   "source": "signingsavvy",
+   "label": "last",
+   "predicted": "cousin"
+  },
+  {
+   "video_id": "32254",
+   "source": "signingsavvy",
+   "label": "last",
+   "predicted": "secretary"
+  },
+  {
+   "video_id": "32255",
+   "source": "signingsavvy",
+   "label": "last",
+   "predicted": "blue"
+  },
+  {
+   "video_id": "32257",
+   "source": "signingsavvy",
+   "label": "last",
+   "predicted": "cousin"
+  },
+  {
+   "video_id": "32260",
+   "source": "aslsearch",
+   "label": "last",
+   "predicted": "no"
+  },
+  {
+   "video_id": "32261",
+   "source": "aslsearch",
+   "label": "last",
+   "predicted": "cow"
+  },
+  {
+   "video_id": "32320",
+   "source": "spreadthesign",
+   "label": "later",
+   "predicted": "medicine"
+  },
+  {
+   "video_id": "32322",
+   "source": "signschool",
+   "label": "later",
+   "predicted": "go"
+  },
+  {
+   "video_id": "32323",
+   "source": "signschool",
+   "label": "later",
+   "predicted": "need"
+  },
+  {
+   "video_id": "32324",
+   "source": "signschool",
+   "label": "later",
+   "predicted": "cow"
+  },
+  {
+   "video_id": "32326",
+   "source": "asldeafined",
+   "label": "later",
+   "predicted": "medicine"
+  },
+  {
+   "video_id": "32333",
+   "source": "signingsavvy",
+   "label": "later",
+   "predicted": "medicine"
+  },
+  {
+   "video_id": "32337",
+   "source": "aslsearch",
+   "label": "later",
+   "predicted": "paint"
+  },
+  {
+   "video_id": "32338",
+   "source": "aslsearch",
+   "label": "later",
+   "predicted": "paint"
+  },
+  {
+   "video_id": "33266",
+   "source": "spreadthesign",
+   "label": "like",
+   "predicted": "give"
+  },
+  {
+   "video_id": "33270",
+   "source": "asldeafined",
+   "label": "like",
+   "predicted": "yes"
+  },
+  {
+   "video_id": "33281",
+   "source": "aslu",
+   "label": "like",
+   "predicted": "white"
+  },
+  {
+   "video_id": "33282",
+   "source": "aslu",
+   "label": "like",
+   "predicted": "white"
+  },
+  {
+   "video_id": "33286",
+   "source": "aslsearch",
+   "label": "like",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "34738",
+   "source": "asldeafined",
+   "label": "man",
+   "predicted": "graduate"
+  },
+  {
+   "video_id": "34824",
+   "source": "startasl",
+   "label": "many",
+   "predicted": "computer"
+  },
+  {
+   "video_id": "34826",
+   "source": "signschool",
+   "label": "many",
+   "predicted": "now"
+  },
+  {
+   "video_id": "34834",
+   "source": "aslu",
+   "label": "many",
+   "predicted": "computer"
+  },
+  {
+   "video_id": "34836",
+   "source": "aslu",
+   "label": "many",
+   "predicted": "now"
+  },
+  {
+   "video_id": "34839",
+   "source": "aslsearch",
+   "label": "many",
+   "predicted": "cook"
+  },
+  {
+   "video_id": "35453",
+   "source": "startasl",
+   "label": "medicine",
+   "predicted": "secretary"
+  },
+  {
+   "video_id": "35458",
+   "source": "signingsavvy",
+   "label": "medicine",
+   "predicted": "time"
+  },
+  {
+   "video_id": "35506",
+   "source": "asl5200",
+   "label": "meet",
+   "predicted": "medicine"
+  },
+  {
+   "video_id": "35512",
+   "source": "signschool",
+   "label": "meet",
+   "predicted": "go"
+  },
+  {
+   "video_id": "35517",
+   "source": "signingsavvy",
+   "label": "meet",
+   "predicted": "who"
+  },
+  {
+   "video_id": "36929",
+   "source": "spreadthesign",
+   "label": "mother",
+   "predicted": "hot"
+  },
+  {
+   "video_id": "36932",
+   "source": "signschool",
+   "label": "mother",
+   "predicted": "blue"
+  },
+  {
+   "video_id": "36940",
+   "source": "aslu",
+   "label": "mother",
+   "predicted": "hot"
+  },
+  {
+   "video_id": "36941",
+   "source": "aslu",
+   "label": "mother",
+   "predicted": "fish"
+  },
+  {
+   "video_id": "36944",
+   "source": "aslu",
+   "label": "mother",
+   "predicted": "fish"
+  },
+  {
+   "video_id": "36946",
+   "source": "aslsearch",
+   "label": "mother",
+   "predicted": "africa"
+  },
+  {
+   "video_id": "37882",
+   "source": "startasl",
+   "label": "need",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "37884",
+   "source": "asldeafined",
+   "label": "need",
+   "predicted": "yes"
+  },
+  {
+   "video_id": "37894",
+   "source": "aslsearch",
+   "label": "need",
+   "predicted": "yes"
+  },
+  {
+   "video_id": "38524",
+   "source": "spreadthesign",
+   "label": "no",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "38527",
+   "source": "signschool",
+   "label": "no",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "38532",
+   "source": "signingsavvy",
+   "label": "no",
+   "predicted": "africa"
+  },
+  {
+   "video_id": "38533",
+   "source": "signingsavvy",
+   "label": "no",
+   "predicted": "orange"
+  },
+  {
+   "video_id": "38538",
+   "source": "aslu",
+   "label": "no",
+   "predicted": "computer"
+  },
+  {
+   "video_id": "38541",
+   "source": "aslu",
+   "label": "no",
+   "predicted": "yes"
+  },
+  {
+   "video_id": "38544",
+   "source": "aslsearch",
+   "label": "no",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "38991",
+   "source": "spreadthesign",
+   "label": "now",
+   "predicted": "clothes"
+  },
+  {
+   "video_id": "38994",
+   "source": "signschool",
+   "label": "now",
+   "predicted": "give"
+  },
+  {
+   "video_id": "38997",
+   "source": "signingsavvy",
+   "label": "now",
+   "predicted": "give"
+  },
+  {
+   "video_id": "38999",
+   "source": "signingsavvy",
+   "label": "now",
+   "predicted": "secretary"
+  },
+  {
+   "video_id": "39000",
+   "source": "signingsavvy",
+   "label": "now",
+   "predicted": "secretary"
+  },
+  {
+   "video_id": "39003",
+   "source": "aslu",
+   "label": "now",
+   "predicted": "give"
+  },
+  {
+   "video_id": "40116",
+   "source": "startasl",
+   "label": "orange",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "40117",
+   "source": "signschool",
+   "label": "orange",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "40121",
+   "source": "signingsavvy",
+   "label": "orange",
+   "predicted": "like"
+  },
+  {
+   "video_id": "40122",
+   "source": "aslu",
+   "label": "orange",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "40123",
+   "source": "aslu",
+   "label": "orange",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "40129",
+   "source": "aslsearch",
+   "label": "orange",
+   "predicted": "give"
+  },
+  {
+   "video_id": "40130",
+   "source": "aslsearch",
+   "label": "orange",
+   "predicted": "give"
+  },
+  {
+   "video_id": "40834",
+   "source": "signschool",
+   "label": "paint",
+   "predicted": "finish"
+  },
+  {
+   "video_id": "41028",
+   "source": "signschool",
+   "label": "paper",
+   "predicted": "cook"
+  },
+  {
+   "video_id": "41029",
+   "source": "asldeafined",
+   "label": "paper",
+   "predicted": "school"
+  },
+  {
+   "video_id": "41032",
+   "source": "signingsavvy",
+   "label": "paper",
+   "predicted": "give"
+  },
+  {
+   "video_id": "42830",
+   "source": "startasl",
+   "label": "pink",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "42831",
+   "source": "signschool",
+   "label": "pink",
+   "predicted": "who"
+  },
+  {
+   "video_id": "42836",
+   "source": "signingsavvy",
+   "label": "pink",
+   "predicted": "wrong"
+  },
+  {
+   "video_id": "42843",
+   "source": "aslsearch",
+   "label": "pink",
+   "predicted": "mother"
+  },
+  {
+   "video_id": "43166",
+   "source": "spreadthesign",
+   "label": "play",
+   "predicted": "last"
+  },
+  {
+   "video_id": "43167",
+   "source": "startasl",
+   "label": "play",
+   "predicted": "language"
+  },
+  {
+   "video_id": "43168",
+   "source": "signschool",
+   "label": "play",
+   "predicted": "secretary"
+  },
+  {
+   "video_id": "43169",
+   "source": "signschool",
+   "label": "play",
+   "predicted": "go"
+  },
+  {
+   "video_id": "43171",
+   "source": "asldeafined",
+   "label": "play",
+   "predicted": "graduate"
+  },
+  {
+   "video_id": "43173",
+   "source": "signingsavvy",
+   "label": "play",
+   "predicted": "before"
+  },
+  {
+   "video_id": "43174",
+   "source": "signingsavvy",
+   "label": "play",
+   "predicted": "thin"
+  },
+  {
+   "video_id": "43179",
+   "source": "aslsearch",
+   "label": "play",
+   "predicted": "go"
+  },
+  {
+   "video_id": "43180",
+   "source": "aslsearch",
+   "label": "play",
+   "predicted": "language"
+  },
+  {
+   "video_id": "45263",
+   "source": "signschool",
+   "label": "pull",
+   "predicted": "accident"
+  },
+  {
+   "video_id": "45264",
+   "source": "signschool",
+   "label": "pull",
+   "predicted": "table"
+  },
+  {
+   "video_id": "45267",
+   "source": "signingsavvy",
+   "label": "pull",
+   "predicted": "give"
+  },
+  {
+   "video_id": "45273",
+   "source": "aslsearch",
+   "label": "pull",
+   "predicted": "go"
+  },
+  {
+   "video_id": "45433",
+   "source": "spreadthesign",
+   "label": "purple",
+   "predicted": "hearing"
+  },
+  {
+   "video_id": "45435",
+   "source": "signschool",
+   "label": "purple",
+   "predicted": "need"
+  },
+  {
+   "video_id": "45436",
+   "source": "asldeafined",
+   "label": "purple",
+   "predicted": "paint"
+  },
+  {
+   "video_id": "49595",
+   "source": "spreadthesign",
+   "label": "school",
+   "predicted": "cook"
+  },
+  {
+   "video_id": "49597",
+   "source": "signschool",
+   "label": "school",
+   "predicted": "paint"
+  },
+  {
+   "video_id": "49598",
+   "source": "signschool",
+   "label": "school",
+   "predicted": "paper"
+  },
+  {
+   "video_id": "49599",
+   "source": "asldeafined",
+   "label": "school",
+   "predicted": "table"
+  },
+  {
+   "video_id": "49602",
+   "source": "signingsavvy",
+   "label": "school",
+   "predicted": "time"
+  },
+  {
+   "video_id": "49606",
+   "source": "aslsearch",
+   "label": "school",
+   "predicted": "cook"
+  },
+  {
+   "video_id": "50039",
+   "source": "signschool",
+   "label": "secretary",
+   "predicted": "son"
+  },
+  {
+   "video_id": "50040",
+   "source": "signschool",
+   "label": "secretary",
+   "predicted": "year"
+  },
+  {
+   "video_id": "50041",
+   "source": "asldeafined",
+   "label": "secretary",
+   "predicted": "cook"
+  },
+  {
+   "video_id": "55361",
+   "source": "elementalasl",
+   "label": "study",
+   "predicted": "time"
+  },
+  {
+   "video_id": "55363",
+   "source": "startasl",
+   "label": "study",
+   "predicted": "paint"
+  },
+  {
+   "video_id": "55368",
+   "source": "signingsavvy",
+   "label": "study",
+   "predicted": "time"
+  },
+  {
+   "video_id": "55369",
+   "source": "signingsavvy",
+   "label": "study",
+   "predicted": "dance"
+  },
+  {
+   "video_id": "57282",
+   "source": "signingsavvy",
+   "label": "tell",
+   "predicted": "who"
+  },
+  {
+   "video_id": "57283",
+   "source": "signingsavvy",
+   "label": "tell",
+   "predicted": "hearing"
+  },
+  {
+   "video_id": "57285",
+   "source": "signingsavvy",
+   "label": "tell",
+   "predicted": "who"
+  },
+  {
+   "video_id": "57291",
+   "source": "aslsearch",
+   "label": "tell",
+   "predicted": "pink"
+  },
+  {
+   "video_id": "57628",
+   "source": "elementalasl",
+   "label": "thanksgiving",
+   "predicted": "paint"
+  },
+  {
+   "video_id": "57631",
+   "source": "startasl",
+   "label": "thanksgiving",
+   "predicted": "computer"
+  },
+  {
+   "video_id": "57633",
+   "source": "asldeafined",
+   "label": "thanksgiving",
+   "predicted": "many"
+  },
+  {
+   "video_id": "57635",
+   "source": "asldeafined",
+   "label": "thanksgiving",
+   "predicted": "pink"
+  },
+  {
+   "video_id": "57638",
+   "source": "signingsavvy",
+   "label": "thanksgiving",
+   "predicted": "family"
+  },
+  {
+   "video_id": "57641",
+   "source": "signingsavvy",
+   "label": "thanksgiving",
+   "predicted": "man"
+  },
+  {
+   "video_id": "57642",
+   "source": "aslu",
+   "label": "thanksgiving",
+   "predicted": "secretary"
+  },
+  {
+   "video_id": "57919",
+   "source": "asl5200",
+   "label": "thin",
+   "predicted": "study"
+  },
+  {
+   "video_id": "57934",
+   "source": "startasl",
+   "label": "thin",
+   "predicted": "africa"
+  },
+  {
+   "video_id": "57935",
+   "source": "startasl",
+   "label": "thin",
+   "predicted": "secretary"
+  },
+  {
+   "video_id": "57936",
+   "source": "signschool",
+   "label": "thin",
+   "predicted": "man"
+  },
+  {
+   "video_id": "57937",
+   "source": "signschool",
+   "label": "thin",
+   "predicted": "give"
+  },
+  {
+   "video_id": "57939",
+   "source": "signschool",
+   "label": "thin",
+   "predicted": "cow"
+  },
+  {
+   "video_id": "57941",
+   "source": "signschool",
+   "label": "thin",
+   "predicted": "man"
+  },
+  {
+   "video_id": "57942",
+   "source": "asldeafined",
+   "label": "thin",
+   "predicted": "thanksgiving"
+  },
+  {
+   "video_id": "57948",
+   "source": "signingsavvy",
+   "label": "thin",
+   "predicted": "thanksgiving"
+  },
+  {
+   "video_id": "57949",
+   "source": "signingsavvy",
+   "label": "thin",
+   "predicted": "thanksgiving"
+  },
+  {
+   "video_id": "57950",
+   "source": "aslu",
+   "label": "thin",
+   "predicted": "africa"
+  },
+  {
+   "video_id": "58359",
+   "source": "asl5200",
+   "label": "thursday",
+   "predicted": "before"
+  },
+  {
+   "video_id": "58360",
+   "source": "spreadthesign",
+   "label": "thursday",
+   "predicted": "tell"
+  },
+  {
+   "video_id": "58361",
+   "source": "startasl",
+   "label": "thursday",
+   "predicted": "thin"
+  },
+  {
+   "video_id": "58362",
+   "source": "signschool",
+   "label": "thursday",
+   "predicted": "computer"
+  },
+  {
+   "video_id": "58365",
+   "source": "signingsavvy",
+   "label": "thursday",
+   "predicted": "hearing"
+  },
+  {
+   "video_id": "58502",
+   "source": "signingsavvy",
+   "label": "time",
+   "predicted": "year"
+  },
+  {
+   "video_id": "63201",
+   "source": "startasl",
+   "label": "white",
+   "predicted": "like"
+  },
+  {
+   "video_id": "63202",
+   "source": "startasl",
+   "label": "white",
+   "predicted": "africa"
+  },
+  {
+   "video_id": "63203",
+   "source": "signschool",
+   "label": "white",
+   "predicted": "blue"
+  },
+  {
+   "video_id": "63207",
+   "source": "signingsavvy",
+   "label": "white",
+   "predicted": "like"
+  },
+  {
+   "video_id": "63208",
+   "source": "signingsavvy",
+   "label": "white",
+   "predicted": "hot"
+  },
+  {
+   "video_id": "63219",
+   "source": "asl5200",
+   "label": "who",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "63225",
+   "source": "spreadthesign",
+   "label": "who",
+   "predicted": "orange"
+  },
+  {
+   "video_id": "63229",
+   "source": "signschool",
+   "label": "who",
+   "predicted": "hearing"
+  },
+  {
+   "video_id": "63230",
+   "source": "signschool",
+   "label": "who",
+   "predicted": "orange"
+  },
+  {
+   "video_id": "63231",
+   "source": "asldeafined",
+   "label": "who",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "63232",
+   "source": "asldeafined",
+   "label": "who",
+   "predicted": "orange"
+  },
+  {
+   "video_id": "63239",
+   "source": "aslu",
+   "label": "who",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "63240",
+   "source": "aslu",
+   "label": "who",
+   "predicted": "wrong"
+  },
+  {
+   "video_id": "63242",
+   "source": "aslsearch",
+   "label": "who",
+   "predicted": "give"
+  },
+  {
+   "video_id": "63769",
+   "source": "asl5200",
+   "label": "work",
+   "predicted": "orange"
+  },
+  {
+   "video_id": "63792",
+   "source": "signschool",
+   "label": "work",
+   "predicted": "year"
+  },
+  {
+   "video_id": "63799",
+   "source": "signingsavvy",
+   "label": "work",
+   "predicted": "year"
+  },
+  {
+   "video_id": "64085",
+   "source": "startasl",
+   "label": "wrong",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "64086",
+   "source": "signschool",
+   "label": "wrong",
+   "predicted": "thin"
+  },
+  {
+   "video_id": "64211",
+   "source": "signschool",
+   "label": "year",
+   "predicted": "paint"
+  },
+  {
+   "video_id": "64219",
+   "source": "signingsavvy",
+   "label": "year",
+   "predicted": "before"
+  },
+  {
+   "video_id": "64283",
+   "source": "signschool",
+   "label": "yes",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "64288",
+   "source": "asldeafined",
+   "label": "yes",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "65043",
+   "source": "aslsignbank",
+   "label": "all",
+   "predicted": "time"
+  },
+  {
+   "video_id": "65085",
+   "source": "aslsignbank",
+   "label": "apple",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "65167",
+   "source": "aslsignbank",
+   "label": "before",
+   "predicted": "study"
+  },
+  {
+   "video_id": "65200",
+   "source": "aslsignbank",
+   "label": "black",
+   "predicted": "cow"
+  },
+  {
+   "video_id": "65328",
+   "source": "aslsignbank",
+   "label": "chair",
+   "predicted": "time"
+  },
+  {
+   "video_id": "65635",
+   "source": "aslsignbank",
+   "label": "enjoy",
+   "predicted": "secretary"
+  },
+  {
+   "video_id": "65731",
+   "source": "aslsignbank",
+   "label": "fish",
+   "predicted": "give"
+  },
+  {
+   "video_id": "65792",
+   "source": "aslsignbank",
+   "label": "full",
+   "predicted": "hot"
+  },
+  {
+   "video_id": "65889",
+   "source": "aslsignbank",
+   "label": "help",
+   "predicted": "secretary"
+  },
+  {
+   "video_id": "66015",
+   "source": "aslsignbank",
+   "label": "later",
+   "predicted": "go"
+  },
+  {
+   "video_id": "66147",
+   "source": "aslsignbank",
+   "label": "mother",
+   "predicted": "blue"
+  },
+  {
+   "video_id": "66246",
+   "source": "aslsignbank",
+   "label": "orange",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "66355",
+   "source": "aslsignbank",
+   "label": "purple",
+   "predicted": "give"
+  },
+  {
+   "video_id": "66606",
+   "source": "aslsignbank",
+   "label": "thin",
+   "predicted": "birthday"
+  },
+  {
+   "video_id": "66638",
+   "source": "aslsignbank",
+   "label": "thursday",
+   "predicted": "white"
+  },
+  {
+   "video_id": "66640",
+   "source": "aslsignbank",
+   "label": "thursday",
+   "predicted": "son"
+  },
+  {
+   "video_id": "66778",
+   "source": "aslsignbank",
+   "label": "who",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "66779",
+   "source": "aslsignbank",
+   "label": "who",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "68001",
+   "source": "valencia-asl",
+   "label": "all",
+   "predicted": "africa"
+  },
+  {
+   "video_id": "68007",
+   "source": "valencia-asl",
+   "label": "before",
+   "predicted": "no"
+  },
+  {
+   "video_id": "68010",
+   "source": "valencia-asl",
+   "label": "blue",
+   "predicted": "mother"
+  },
+  {
+   "video_id": "68028",
+   "source": "valencia-asl",
+   "label": "computer",
+   "predicted": "africa"
+  },
+  {
+   "video_id": "68114",
+   "source": "valencia-asl",
+   "label": "now",
+   "predicted": "give"
+  },
+  {
+   "video_id": "68183",
+   "source": "valencia-asl",
+   "label": "who",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "69213",
+   "source": "aslbrick",
+   "label": "apple",
+   "predicted": "bird"
+  },
+  {
+   "video_id": "69238",
+   "source": "aslbrick",
+   "label": "blue",
+   "predicted": "give"
+  },
+  {
+   "video_id": "69241",
+   "source": "aslbrick",
+   "label": "book",
+   "predicted": "time"
+  },
+  {
+   "video_id": "69325",
+   "source": "aslbrick",
+   "label": "fish",
+   "predicted": "cousin"
+  },
+  {
+   "video_id": "69343",
+   "source": "aslbrick",
+   "label": "give",
+   "predicted": "fish"
+  },
+  {
+   "video_id": "69368",
+   "source": "aslbrick",
+   "label": "hot",
+   "predicted": "africa"
+  },
+  {
+   "video_id": "69396",
+   "source": "aslbrick",
+   "label": "many",
+   "predicted": "give"
+  },
+  {
+   "video_id": "69455",
+   "source": "aslbrick",
+   "label": "school",
+   "predicted": "give"
+  },
+  {
+   "video_id": "69533",
+   "source": "aslbrick",
+   "label": "white",
+   "predicted": "give"
+  },
+  {
+   "video_id": "70016",
+   "source": "northtexas",
+   "label": "hearing",
+   "predicted": "fish"
+  },
+  {
+   "video_id": "70176",
+   "source": "northtexas",
+   "label": "graduate",
+   "predicted": "hearing"
+  },
+  {
+   "video_id": "70211",
+   "source": "northtexas",
+   "label": "paper",
+   "predicted": "brown"
+  },
+  {
+   "video_id": "70212",
+   "source": "northtexas",
+   "label": "book",
+   "predicted": "fish"
+  },
+  {
+   "video_id": "70230",
+   "source": "northtexas",
+   "label": "chair",
+   "predicted": "later"
+  },
+  {
+   "video_id": "70237",
+   "source": "northtexas",
+   "label": "need",
+   "predicted": "like"
+  },
+  {
+   "video_id": "70242",
+   "source": "northtexas",
+   "label": "brown",
+   "predicted": "yes"
+  },
+  {
+   "video_id": "70244",
+   "source": "northtexas",
+   "label": "black",
+   "predicted": "like"
+  },
+  {
+   "video_id": "70245",
+   "source": "northtexas",
+   "label": "white",
+   "predicted": "fish"
+  },
+  {
+   "video_id": "70246",
+   "source": "northtexas",
+   "label": "pink",
+   "predicted": "give"
+  },
+  {
+   "video_id": "70247",
+   "source": "northtexas",
+   "label": "purple",
+   "predicted": "like"
+  },
+  {
+   "video_id": "70249",
+   "source": "northtexas",
+   "label": "orange",
+   "predicted": "purple"
+  },
+  {
+   "video_id": "70263",
+   "source": "northtexas",
+   "label": "chair",
+   "predicted": "no"
+  },
+  {
+   "video_id": "70266",
+   "source": "northtexas",
+   "label": "book",
+   "predicted": "chair"
+  },
+  {
+   "video_id": "70270",
+   "source": "northtexas",
+   "label": "hot",
+   "predicted": "book"
+  },
+  {
+   "video_id": "70296",
+   "source": "northtexas",
+   "label": "wrong",
+   "predicted": "africa"
+  },
+  {
+   "video_id": "70299",
+   "source": "northtexas",
+   "label": "like",
+   "predicted": "school"
+  },
+  {
+   "video_id": "70306",
+   "source": "northtexas",
+   "label": "year",
+   "predicted": "but"
+  },
+  {
+   "video_id": "70308",
+   "source": "northtexas",
+   "label": "many",
+   "predicted": "enjoy"
+  },
+  {
+   "video_id": "70309",
+   "source": "northtexas",
+   "label": "apple",
+   "predicted": "blue"
+  },
+  {
+   "video_id": "70310",
+   "source": "northtexas",
+   "label": "orange",
+   "predicted": "family"
+  },
+  {
+   "video_id": "70323",
+   "source": "northtexas",
+   "label": "table",
+   "predicted": "fish"
+  },
+  {
+   "video_id": "70332",
+   "source": "northtexas",
+   "label": "cousin",
+   "predicted": "cow"
+  },
+  {
+   "video_id": "70335",
+   "source": "northtexas",
+   "label": "son",
+   "predicted": "full"
+  },
+  {
+   "video_id": "70345",
+   "source": "northtexas",
+   "label": "now",
+   "predicted": "son"
+  },
+  {
+   "video_id": "70348",
+   "source": "northtexas",
+   "label": "before",
+   "predicted": "now"
+  },
+  {
+   "video_id": "70356",
+   "source": "northtexas",
+   "label": "time",
+   "predicted": "fish"
+  },
+  {
+   "video_id": "70357",
+   "source": "northtexas",
+   "label": "birthday",
+   "predicted": "like"
+  },
+  {
+   "video_id": "70359",
+   "source": "northtexas",
+   "label": "birthday",
+   "predicted": "time"
+  },
+  {
+   "video_id": "70361",
+   "source": "northtexas",
+   "label": "finish",
+   "predicted": "full"
+  }
+ ]
+}
