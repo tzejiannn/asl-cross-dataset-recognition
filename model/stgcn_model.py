@@ -5,13 +5,12 @@ ST-GCN encoder + FC decoder, reimplemented to match OpenHands (AI4Bharat/OpenHan
   - openhands/models/network.py               (Network: encoder + decoder wrapper)
 
 Module names/attribute names are kept identical to OpenHands (`st_gcn_networks`, `gcn`, `tcn`,
-`residual`, `edge_importance`, `data_bn`, `classifier`, ...) so that a checkpoint trained with
-OpenHands' code would load here unchanged.
+`residual`, `edge_importance`, `data_bn`, `classifier`, ...). Every model in this project is
+trained from scratch; no pretrained checkpoint is used.
 
 Note on input shape: the classic ST-GCN paper (Yan et al. 2018) uses (N, C, T, V, M) with an
 explicit person-count axis M. OpenHands drops M entirely (single signer) and its STGCN.forward
-takes (N, C, T, V). This module follows OpenHands (4D) since matching its pretrained weights is
-the hard constraint; `STGCN.forward` accepts an optional (N, C, T, V, M) input and squeezes a
+takes (N, C, T, V). This module follows OpenHands (4D); `STGCN.forward` accepts an optional (N, C, T, V, M) input and squeezes a
 trailing M=1 axis for convenience/spec-compatibility, but M must be 1.
 """
 import math

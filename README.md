@@ -30,7 +30,7 @@ data/          the rebuilt dataset goes here; README.md and the list of WLASL te
 pipeline/      the scripts that build the dataset, stages 01–09
 model/         the ST-GCN model and the pose preprocessing
 experiments/   ablation conditions, training and evaluation; runs write their checkpoints, logs and eval results here
-results/       scripts that compile the results tables and draw the normalisation figures
+results/       the script that compiles the results tables
 paths.py       where everything lives; the scripts import it
 requirements.txt  the Python packages, with the versions used
 ```
@@ -51,14 +51,17 @@ python results/compile_results.py                                       # → re
   training or evaluating a single run.
 - **[`model/README.md`](model/README.md)**: the ST-GCN, the pose format, the point sets and the
   preprocessing transforms.
-- **[`results/README.md`](results/README.md)**: the results tables and the normalisation figures.
+- **[`results/README.md`](results/README.md)**: the results tables.
 
 Headline results (top-1, mean ± SD over 3 seeds):
 
 | Condition | ASL Citizen | WLASL |
 |---|---:|---:|
 | baseline | 74.4 ± 2.8 | 44.1 ± 1.3 |
-| `hands_only_temporal64` (best) | 81.5 ± 0.7 | 58.2 ± 2.0 |
+| `hands_only_temporal64` (highest mean) | 81.5 ± 0.7 | 58.2 ± 2.0 |
+
+On WLASL, the five best conditions differ by less than their seed-to-seed SD, so they can't be
+ranked against each other (report Section 8.6).
 
 ## Licences
 

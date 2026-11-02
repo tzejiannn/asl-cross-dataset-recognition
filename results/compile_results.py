@@ -3,7 +3,7 @@ Compiles every run's evaluation (eval_results/{condition}_s{seed}.json) into
 per-condition tables for report Chapter 7: mean ± SD over seeds of top-1/5/10 on the ASL Citizen
 test set and on WLASL, the cross-dataset drop, and the coefficient of variation across ASL Citizen
 test signers and across WLASL sources. A difference from the baseline is marked as a finding (*)
-only if it exceeds the larger of the two conditions' seed standard deviations (report Section 4.4).
+only if it is larger than the seed standard deviation of both conditions (report Section 5.5).
 
 Usage:
     python compile_results.py
@@ -70,8 +70,9 @@ def main():
     head = ("| Condition | Seeds | ASL Citizen top-1 (%) | Δ | WLASL top-1 (%) | Δ | Drop (pts) | Δ | CV signers | CV sources |\n"
             "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|")
     out = ["# Ablation results (ASL Citizen study, 67 signs)", "",
-           "Mean ± SD over seeds. Δ = difference from baseline; * = larger than the seed SD of either condition "
-           "(report Section 4.4). Drop = ASL Citizen top-1 − WLASL top-1 (lower is more robust). CV = coefficient "
+           "Mean ± SD over seeds. Δ = difference from baseline; * = larger than the seed SD of both conditions "
+           "(report Section 5.5). Drop = ASL Citizen top-1 − WLASL top-1; a smaller drop is an improvement only if "
+           "WLASL top-1 is equal or higher (report Section 5.3). CV = coefficient "
            "of variation of top-1 across ASL Citizen test signers / WLASL sources with ≥ 20 clips (lower is more even).", ""]
     out += ["## Baseline", "", head, row("baseline", b, b), ""]
     for title, conds in TYPES:

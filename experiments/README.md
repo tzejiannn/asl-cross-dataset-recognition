@@ -24,7 +24,8 @@ For each condition and seed, the script trains a model (`train.py`), then evalua
 run out of memory on a 12 GB GPU. A run whose eval result already exists is skipped, so the queue
 can be stopped and restarted. A failed training run is retried once before the queue stops.
 
-A run takes 15–60 minutes on one GPU: about 7 s per epoch, and 170–520 epochs before early stopping.
+A run takes about 20–60 minutes on one GPU: about 7 s per epoch, and 169–515 epochs before early
+stopping.
 
 | Output | Contents |
 |---|---|

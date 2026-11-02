@@ -41,13 +41,6 @@ GRAPH_HANDS_20 = dict(num_nodes=20, center=0, inward_edges=[
 ])
 WRISTS_HANDS_20 = [0, 10]
 
-# Same graph plus node 20, a point halfway between the wrists (added by AddMidpointJoint), as the
-# center; the wrist-to-wrist edge is replaced by two edges through it, so both hands are treated alike.
-GRAPH_HANDS_20_MIDPOINT = dict(
-    num_nodes=21, center=20,
-    inward_edges=[e for e in GRAPH_HANDS_20["inward_edges"] if e != [0, 10]] + [[0, 20], [10, 20]],
-)
-
 # --- 42 points: all 21 points per hand ------------------------------------------------------------
 POINTS_HANDS_42 = list(range(33, 75))
 

@@ -15,7 +15,7 @@
     "clips": ["32253", "32255", "32257", "32261"]
   },
   "northtexas": {
-    "reason": "northtexas: clips cut from compilation videos; WLASL's frame ranges land on title cards / idle frames / neighbouring signs. Flagged by the first-round evaluation (3.3% top-1 vs >=36.7% for every other source; 31% of frames with no person detected), confirmed by eye.",
+    "reason": "northtexas: clips cut from compilation videos; WLASL's frame ranges land on title cards / idle frames / neighbouring signs. Flagged by the first-round evaluation (3.2% top-1, against >=30.1% for every other source with at least 20 clips; no person detected in 30.6% of frames, against at most 1.2% for any other source), confirmed by eye.",
     "count": 39,
     "clips": [
       "70015", "70016", "70173", "70176", "70207", "70211", "70212", "70230",

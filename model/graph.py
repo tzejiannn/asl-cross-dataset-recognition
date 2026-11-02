@@ -2,8 +2,7 @@
 Graph adjacency construction for ST-GCN.
 
 Ported from OpenHands (AI4Bharat/OpenHands), openhands/models/encoder/graph/graph_utils.py,
-so that the resulting adjacency tensor `A` has the exact same shape/values as the one used to
-train OpenHands' released checkpoints.
+with the same computations, so the graph and its spatial partitioning match OpenHands' ST-GCN.
 """
 import numpy as np
 

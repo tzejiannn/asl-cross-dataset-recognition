@@ -4,7 +4,7 @@ frames x points) and returns it with "frames" changed.
 
 From OpenHands (openhands/datasets/pose_transforms.py): Compose, PoseSelect,
 CenterAndScaleNormalize, ShearTransform, RotationTransform.
-Added for this project: TrimToHandSpan, ConfidenceMask, AddMidpointJoint, TemporalResample.
+Added for this project: TrimToHandSpan, ConfidenceMask, TemporalResample.
 """
 import numpy as np
 import torch
@@ -75,19 +75,6 @@ class PoseSelect:
     def __call__(self, data: dict) -> dict:
         x = data["frames"]
         data["frames"] = x[:, :, self.pose_indexes]
-        return data
-
-
-class AddMidpointJoint:
-    """Adds one extra point halfway between points `a` and `b` (the two wrists), as the last point."""
-
-    def __init__(self, a, b):
-        self.a, self.b = a, b
-
-    def __call__(self, data: dict) -> dict:
-        x = data["frames"]  # (C, T, V)
-        mid = (x[:, :, self.a] + x[:, :, self.b]) / 2
-        data["frames"] = torch.cat([x, mid.unsqueeze(-1)], dim=-1)
         return data
 
 

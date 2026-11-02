@@ -1,6 +1,6 @@
 """
 Downloads the ASL Citizen clips of the shared signs (../02_vocabulary_overlap/class_list.txt), straight
-out of the 45.9 GB ASL_Citizen.zip on the Microsoft Download Center via HTTP range requests
+out of ASL_Citizen.zip (listed as 42.8 GB) on the Microsoft Download Center via HTTP range requests
 (remotezip), instead of downloading the whole archive. 2,050 clips of 67 signs.
 
 ../../data/asl_citizen/ASL_Citizen/ holds ASL Citizen's split files (splits/train.csv, val.csv, test.csv: every clip with its

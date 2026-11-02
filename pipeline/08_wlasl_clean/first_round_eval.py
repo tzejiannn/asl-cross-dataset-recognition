@@ -1,5 +1,5 @@
 """
-Cleaning check 1: the first-round evaluation (report Section 3.4). The three baseline models in
+Cleaning check 1: the first-round evaluation (report Section 5.1). The three baseline models in
 ../07_baseline (trained on ASL Citizen only; no training happens here) classify every retrieved
 WLASL clip of the 67 shared words, before any clip is removed (843 clips).
 

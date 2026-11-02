@@ -1,5 +1,5 @@
 """
-Extracts MediaPipe Holistic pose keypoints for WLASL videos, saving one .pkl file per video in
+Extracts MediaPipe Holistic pose keypoints for a folder of clips (WLASL or ASL Citizen), saving one .pkl file per video in
 the exact on-disk format OpenHands uses (see scripts/mediapipe_extract.py):
 
     {"keypoints": np.ndarray (T, 75, 3), "confidences": np.ndarray (T, 75)}
@@ -7,8 +7,7 @@ the exact on-disk format OpenHands uses (see scripts/mediapipe_extract.py):
 75 = 33 body + 21 left-hand + 21 right-hand points (face mesh excluded). `pose_transforms.
 PoseSelect` later reduces this to the 27-point `mediapipe_holistic_minimal_27` subset.
 
-Expects trimmed per-instance videos named `{video_id}.mp4`, i.e. the WLASL clips in
-`../03_wlasl_filter/videos/`.
+Expects one clip per sign, named `{video_id}.mp4`.
 
 Usage (from this folder):
     python pose_extraction.py --videos_dir ../03_wlasl_filter/videos --out_dir poses_wlasl
@@ -92,7 +91,7 @@ def dump_pose_for_dataset(videos_dir, out_dir, video_ids=None, model_complexity=
             continue
 
         # A fresh Holistic instance per video avoids a known mediapipe memory-leak issue
-        # (https://github.com/google/mediapipe/issues/2152), same as OpenHands' extractor.
+        # (https://github.com/google/mediapipe/issues/2152).
         holistic = mp.solutions.holistic.Holistic(static_image_mode=False, model_complexity=model_complexity)
         try:
             data = extract_keypoints_for_video(video_path, holistic)

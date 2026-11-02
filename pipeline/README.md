@@ -6,6 +6,11 @@ folder (`01_wlasl_download/`, `02_vocabulary_overlap/`, …), and each stage rea
 ones wrote. The result goes in `data/`, described in [`data/README.md`](../data/README.md) along with
 the list of clips to keep and the final vocabulary.
 
+The vocabulary comparison (step 3) and the cleaning of the WLASL clips (step 7) don't need to be
+repeated: their outcomes, the final 67 words (`02_vocabulary_overlap/class_list.txt`) and the
+clips removed (`08_wlasl_clean/excluded_clips.json`), are in the repository, and both steps can be
+skipped.
+
 Commands are given from the repository root.
 
 ## Requirements
@@ -62,6 +67,10 @@ once the vocabulary is known.
 
 ## Step 3: choose the vocabulary (stage 02, `02_vocabulary_overlap/`)
 
+This step compares the two datasets' vocabularies. Its outcome, `02_vocabulary_overlap/class_list.txt`
+(the final 67 words), is in the repository, so **you can skip to step 4.** Run step 3 only to
+repeat the comparison.
+
 ```
 cd pipeline/02_vocabulary_overlap && python find_overlap.py && cd ../..
 ```
@@ -72,10 +81,14 @@ dropped if the matches have more than one ASL-LEX code, because the two datasets
 different signs for the same word.
 
 - **Kept: 67 words**, listed in [`data/README.md`](../data/README.md#final-vocabulary-67-signs).
-- **Dropped, several ASL Citizen signs (31):** basketball, bed, bowling, can, candy, cheat, city,
+- **Dropped, several ASL Citizen signs (32):** basketball, bed, bowling, can, candy, cheat, city,
   cool, corn, dark, deaf, decide, doctor, dog, drink, eat, fine, hat, how, jacket, kiss, letter,
-  pizza, right, same, shirt, tall, walk, want, what, woman.
-- **Dropped, no ASL Citizen sign found (2):** forget, short.
+  pizza, right, same, shirt, short, tall, walk, want, what, woman.
+- **Dropped, not in ASL Citizen (1):** forget.
+
+*short* has several ASL Citizen signs, named by meaning (SHORTPERSON, SHORTDISTANCE, SHORTWORD)
+rather than numbered, so the name match doesn't find them and `vocabulary.json` lists it under
+"not in ASL Citizen". It is dropped either way.
 
 **Result:** `class_list.txt` (class id, ASL Citizen sign and WLASL word for each of the 67 classes)
 and `vocabulary.json` (the kept words with their ASL-LEX codes, and the dropped words with the
@@ -137,8 +150,9 @@ watching it.
 1. **First-round evaluation** (`first_round_eval.py`): the three baseline models classify all 843
    WLASL clips. Accuracy is reported per source website and per sign, along with the share of frames
    in which no person is detected.
-2. **By source:** clips from northtexas get 3.3% top-1, compared with at least 36.7% for every other
-   source, and 31% of their frames contain no person. They were cut from compilation videos, and
+2. **By source:** clips from northtexas get 3.2% top-1, compared with at least 30.1% for every other
+   source with at least 20 clips, and no person is detected in 30.6% of their frames, against at
+   most 1.2% for any other source. They were cut from compilation videos, and
    WLASL's frame ranges land on title cards, idle frames or neighbouring signs. For example, clip
    70212, labelled *book*, is mostly a title card reading "PENCIL". The whole source is removed.
 3. **By sign:** the 9 signs whose accuracy is more than 1 SD below the mean (accident, before,
@@ -213,5 +227,3 @@ to decide which clips to remove. Step 9 covers only the final clips.
   Hugging Face. They were downloaded once with certificate checks turned off for that site. Without
   them a fresh run gets 1,264 clips. 65225 is a final test clip, so the WLASL test set would have
   790 clips.
-- **short** is dropped as "no ASL Citizen sign found" because its ASL Citizen signs are named by
-  meaning (SHORTPERSON, SHORTDISTANCE, SHORTWORD), not numbered. Either way it is dropped.

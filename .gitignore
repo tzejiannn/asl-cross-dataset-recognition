@@ -19,15 +19,24 @@ pipeline/04_asl_citizen_download/videos/
 pipeline/05_split/split_uncleaned.json
 pipeline/06_pose_extraction/poses_*/
 
+# records of the vocabulary comparison and the first-round evaluation; the scripts rewrite them,
+# and the repository keeps only their outcomes (class_list.txt, excluded_clips.json)
+pipeline/02_vocabulary_overlap/vocabulary.json
+pipeline/08_wlasl_clean/first_round_*.json
+
 # run outputs: checkpoints (trained on ASL Citizen), training logs and eval results
 experiments/checkpoints/
 experiments/logs/
 experiments/eval_results/
 
-# results/ holds only the scripts and their README; the tables and figures are generated
+# results/ holds only the script and its README; the tables it writes are generated
 results/*
 !results/*.py
 !results/README.md
+
+# report figures kept locally, never committed
+results/report_figures/
+results/normalisation_examples/
 
 __pycache__/
 .claude/

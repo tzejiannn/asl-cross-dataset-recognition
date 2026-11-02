@@ -11,9 +11,6 @@ tqdm==4.70.0
 mediapipe==0.10.21
 opencv-contrib-python==4.11.0.86   # the OpenCV build mediapipe depends on; provides cv2
 
-# figures
-matplotlib==3.11.1
-
 # data download: ASL Citizen clips from the zip, and WLASL's YouTube clips
 remotezip==0.12.6
 yt-dlp==2026.8.19
