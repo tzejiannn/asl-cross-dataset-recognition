@@ -19,8 +19,7 @@ pipeline/04_asl_citizen_download/videos/
 pipeline/05_split/split_uncleaned.json
 pipeline/06_pose_extraction/poses_*/
 
-# records of the vocabulary comparison and the first-round evaluation; the scripts rewrite them,
-# and the repository keeps only their outcomes (class_list.txt, excluded_clips.json)
+# the vocabulary comparison and the first-round evaluation
 pipeline/02_vocabulary_overlap/vocabulary.json
 pipeline/08_wlasl_clean/first_round_*.json
 
@@ -29,12 +28,12 @@ experiments/checkpoints/
 experiments/logs/
 experiments/eval_results/
 
-# results/ holds only the script and its README; the tables it writes are generated
+# results
 results/*
 !results/*.py
 !results/README.md
 
-# report figures kept locally, never committed
+# report figures kept locally
 results/report_figures/
 results/normalisation_examples/
 
