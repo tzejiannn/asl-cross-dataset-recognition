@@ -1,6 +1,6 @@
 """
-The 15 conditions of the ablation study. Each one changes one thing about how poses are prepared
-before they reach the model, compared with the baseline.
+The baseline and the 14 conditions of the ablation study. Most conditions change one thing about
+how poses are prepared before they reach the model, compared with the baseline; a few combine two.
 
 A condition is a list of pose transforms, applied in order (see pose_transforms.py). On top of that:
   - every run first crops each clip to its hand activity (TrimToHandSpan, --trim_hand_span);
@@ -9,15 +9,15 @@ A condition is a list of pose transforms, applied in order (see pose_transforms.
   - the hand-only conditions use a different skeleton graph (GRAPHS below);
   - depth_3d and depth_3d_noaug use x, y and z instead of x and y.
 
-Groups:
-  normalisation:      norm_off, norm_frame_level, wrist_norm_27pt
-  low confidence:     conf_mask, conf_mask_no_norm
-  landmark subset:    hands_only, hands_only_shoulder_norm, hands_full_42,
-                      hands_full_42_shoulder_norm
-  temporal:           temporal_fixed64, hands_only_temporal64
-  depth:              depth_3d (3D with augmentation, compared with the baseline), and
-                      depth_3d_noaug with depth_2d_noaug as its control, so 2D/3D is crossed with
-                      augmentation on/off
+Categories (as in the report):
+  spatial normalisation:     norm_off, norm_frame_level, wrist_norm_27pt
+  low-confidence landmarks:  conf_mask, conf_mask_no_norm
+  keypoint selection:        hands_only, hands_only_shoulder_norm, hands_full_42,
+                             hands_full_42_shoulder_norm
+  temporal representation:   temporal_fixed64, hands_only_temporal64
+  depth and augmentation:    depth_3d (3D with augmentation, compared with the baseline), and
+                             depth_3d_noaug with depth_2d_noaug as its control, so 2D/3D is
+                             crossed with augmentation on/off
 """
 from pose_config import (
     GRAPH_27,

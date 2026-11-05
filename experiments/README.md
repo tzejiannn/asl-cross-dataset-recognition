@@ -13,7 +13,7 @@ All commands below run from the repository root.
 bash experiments/run_experiments.sh "<conditions>" "<seeds>"
 ```
 
-For example, the whole study (15 conditions × 3 seeds = 45 runs):
+For example, the whole study (the baseline and 14 conditions, 3 seeds each = 45 runs):
 
 ```
 bash experiments/run_experiments.sh "baseline norm_off norm_frame_level wrist_norm_27pt conf_mask conf_mask_no_norm hands_only hands_only_shoulder_norm hands_full_42 hands_full_42_shoulder_norm temporal_fixed64 hands_only_temporal64 depth_3d depth_3d_noaug depth_2d_noaug" "0 1 2"
@@ -37,8 +37,8 @@ To compile the results into tables, see [`results/README.md`](../results/README.
 
 ## The conditions
 
-Each condition changes one thing about how poses are prepared before they reach the model. They're
-defined in `ablation_configs.py`.
+Most conditions change one thing about how poses are prepared before they reach the model; a few
+combine two changes. They're defined in `ablation_configs.py`.
 
 Every run first crops each clip to the frames where a hand is detected, plus 5 frames either side,
 capped at 150 frames. At training time, random shear and rotation are applied after the condition's
@@ -47,18 +47,18 @@ own steps (except in the two `noaug` conditions).
 | Group | Condition | Change from the baseline |
 |---|---|---|
 | | `baseline` | 27 points (nose, eyes, shoulders, elbows and 10 per hand), centred on the shoulders and scaled by shoulder width over the whole clip |
-| Normalisation | `norm_off` | No normalisation |
+| Spatial normalisation | `norm_off` | No normalisation |
 | | `norm_frame_level` | Shoulder normalisation computed for each frame instead of once per clip |
 | | `wrist_norm_27pt` | Centred and scaled on the two wrists instead of the shoulders |
-| Low-confidence points | `conf_mask` | Points with MediaPipe confidence below 0.5 set to (0, 0) |
+| Low-confidence landmarks | `conf_mask` | Body points with MediaPipe visibility below 0.5 set to (0, 0) |
 | | `conf_mask_no_norm` | The same, with no normalisation |
-| Landmark subset | `hands_only` | Only the 20 hand points, normalised on the wrists |
+| Keypoint selection | `hands_only` | Only the 20 hand points, normalised on the wrists |
 | | `hands_only_shoulder_norm` | Normalised on the shoulders first, then only the 20 hand points kept |
 | | `hands_full_42` | All 21 points per hand, normalised on the wrists |
 | | `hands_full_42_shoulder_norm` | Normalised on the shoulders first, then all 42 hand points kept |
-| Temporal | `temporal_fixed64` | Every clip resampled to 64 frames |
+| Temporal representation | `temporal_fixed64` | Every clip resampled to 64 frames |
 | | `hands_only_temporal64` | `hands_only`, with every clip resampled to 64 frames |
-| Depth | `depth_3d` | x, y and z instead of x and y |
+| Depth and augmentation | `depth_3d` | x, y and z instead of x and y |
 | | `depth_3d_noaug` | x, y and z, without augmentation |
 | | `depth_2d_noaug` | x and y, without augmentation (the control for `depth_3d_noaug`) |
 
@@ -101,11 +101,7 @@ WLASL (`wlasl`). It prints top-1, top-5 and top-10 accuracy for each, and writes
 `eval_results/{run_name}.json` with, for each set:
 
 - `top1`, `top5`, `top10`: accuracy over all clips
-- `per_group`: accuracy per ASL Citizen test signer, or per WLASL source website
-- `group_cv`: how uneven accuracy is across those groups (coefficient of variation over groups
-  with at least 20 clips; lower is more even)
-- `per_class`: accuracy per sign
-- `per_instance`: whether each clip was classified correctly, for comparing conditions clip by clip
+- `per_source` (WLASL only): top-1 accuracy and clip count for each source website
 
 `--condition` must be the one the run was trained with, because it sets the preprocessing and the
 model's input shape.

@@ -29,7 +29,7 @@ experiments/checkpoints/
 experiments/logs/
 experiments/eval_results/
 
-# results/ holds only the script and its README; the tables it writes are generated
+# results/ holds only the scripts and their README; the tables they write are generated
 results/*
 !results/*.py
 !results/README.md

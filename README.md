@@ -30,7 +30,7 @@ data/          the rebuilt dataset goes here; README.md and the list of WLASL te
 pipeline/      the scripts that build the dataset, stages 01–09
 model/         the ST-GCN model and the pose preprocessing
 experiments/   ablation conditions, training and evaluation; runs write their checkpoints, logs and eval results here
-results/       the script that compiles the results tables
+results/       the scripts for the results tables, accuracy by source and the pose statistics
 paths.py       where everything lives; the scripts import it
 requirements.txt  the Python packages, with the versions used
 ```
@@ -39,7 +39,7 @@ Each folder has a README explaining how to use it.
 
 ## Experiments
 
-15 conditions × 3 seeds = 45 runs. Every run trains on ASL Citizen and is tested on both the ASL
+The baseline and 14 conditions, 3 seeds each = 45 runs. Every run trains on ASL Citizen and is tested on both the ASL
 Citizen test set and WLASL.
 
 ```
@@ -51,7 +51,7 @@ python results/compile_results.py                                       # → re
   training or evaluating a single run.
 - **[`model/README.md`](model/README.md)**: the ST-GCN, the pose format, the point sets and the
   preprocessing transforms.
-- **[`results/README.md`](results/README.md)**: the results tables.
+- **[`results/README.md`](results/README.md)**: the results tables, accuracy by WLASL source and the pose statistics.
 
 Headline results (top-1, mean ± SD over 3 seeds):
 

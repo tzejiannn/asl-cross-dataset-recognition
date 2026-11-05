@@ -22,7 +22,6 @@ WLASL_CLIPS = os.path.join(DATA, "wlasl", "wlasl_clips.json")  # word -> [{video
 
 # ASL Citizen clips (training, validation and test)
 CITIZEN_VIDEOS = os.path.join(DATA, "asl_citizen", "videos")
-CITIZEN_SPLITS = os.path.join(DATA, "asl_citizen", "ASL_Citizen", "splits")  # signer of each clip
 
 # extracted poses
 WLASL_POSES = os.path.join(DATA, "poses", "wlasl")
